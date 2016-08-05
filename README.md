@@ -24,7 +24,7 @@ docker network create --subnet=172.18.0.0/16 poligonnet
 docker run --net=poligonnet --ip 172.18.0.5 --dns=172.17.0.1 -h uaa.localnet --name "uaa" -p 8080:8080 -d uaa:1.0 
 ```
 
-## Using uaa 
+## Using uaa (password for admin user: admin1)
 ```
 uaac target http://uaa.localnet:8080/uaa
 uaac token get admin
