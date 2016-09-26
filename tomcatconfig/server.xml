@@ -137,7 +137,8 @@
                prefix="localhost_access_log." suffix=".txt"
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
-        <Context docBase="cloudfoundry-identity-uaa-3.2.1" path="/uaa" reloadable="true"/>
+        <Context docBase="cloudfoundry-identity-uaa-3.2.1" path="" reloadable="true"/>
+        <Context docBase="ROOT" path="/ROOT" reloadable="true"/>
       </Host>
     </Engine>
   </Service>

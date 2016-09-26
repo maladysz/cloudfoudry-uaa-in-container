@@ -170,7 +170,7 @@ scim:
     uaa.admin: Act as an administrator throughout the UAA
     uaa.none: Forbid acting as a user
   users:
-  - admin|admin1|scim.read,scim.create,scim.userids,scim.write
+  - admin|admin1|scim.read,scim.create,scim.userids,scim.write,clients.admin
 
 oauth:
   user:
@@ -188,9 +188,19 @@ oauth:
       - profile
       - roles
       - user_attributes
+  clients:
+    jupyter:
+      authorized-grant-types: client_credentials
+      scope: uaa.none 
+      authorities: clients.read password.write clients.secret clients.write uaa.admin scim.write scim.read 
+      id: jupyter
+      secret: jupyter1
+      resource-ids: clients
 uaa:
   admin: 
     client_secret: admin1
+  jupyter:
+    client_secret: jupyter1
 #  clients:
 #    admin:
 #      authorized-grant-types: client_credentials
